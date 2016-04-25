@@ -35,6 +35,7 @@
     "image"
   ],
   "dependencies": {
+    "got": "^6.3.0",
     "is-url-superb": "^2.0.0",
     "meow": "^3.4.2",
     "tempfile": "^1.1.1",
