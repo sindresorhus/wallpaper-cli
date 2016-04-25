@@ -30,7 +30,6 @@ if (input) {
 			.stream(input)
 			.pipe(fs.createWriteStream(file))
 			.on('finish', () => {
-				console.log (file);
 				wallpaper.set(file);
 			});
 	} else {
