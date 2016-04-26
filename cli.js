@@ -10,13 +10,13 @@ const tempfile = require('tempfile');
 
 const cli = meow(`
 	Usage
-	  $ wallpaper [file | url]
+	  $ wallpaper [file|url]
 
-	Example
+	Examples
 	  $ wallpaper unicorn.jpg
+	  $ wallpaper https://octodex.github.com/images/dojocat.jpg
 	  $ wallpaper
 	  /Users/sindresorhus/unicorn.jpg
-	  $ wallpaper https://octodex.github.com/images/dojocat.jpg
 `, {
 	string: ['_']
 });
@@ -26,6 +26,7 @@ const input = cli.input[0];
 if (input) {
 	if (isUrl(input)) {
 		const file = tempfile(path.extname(input));
+
 		got
 			.stream(input)
 			.pipe(fs.createWriteStream(file))

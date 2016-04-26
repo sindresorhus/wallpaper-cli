@@ -18,13 +18,13 @@ $ npm install --global wallpaper-cli
 $ wallpaper --help
 
   Usage
-    $ wallpaper [file | url]
+    $ wallpaper [file|url]
 
-  Example
+  Examples
     $ wallpaper unicorn.jpg
+    $ wallpaper https://octodex.github.com/images/dojocat.jpg
     $ wallpaper
     /Users/sindresorhus/unicorn.jpg
-    $ wallpaper https://octodex.github.com/images/dojocat.jpg
 ```
 
 
@@ -35,4 +35,4 @@ $ wallpaper --help
 
 ## License
 
-MIT © [Sindre Sorhus](http://sindresorhus.com)
+MIT © [Sindre Sorhus](https://sindresorhus.com)

@@ -22,13 +22,13 @@
     "cli.js"
   ],
   "keywords": [
+    "desktop",
+    "wallpaper",
+    "background",
     "win",
     "windows",
     "osx",
     "linux",
-    "wallpaper",
-    "desktop",
-    "background",
     "image",
     "picture",
     "photo",
@@ -43,7 +43,7 @@
   },
   "devDependencies": {
     "ava": "*",
-    "execa": "^0.3.0",
+    "execa": "^0.4.0",
     "xo": "*"
   },
   "xo": {
