@@ -16,7 +16,7 @@ const cli = meow(`
 	  $ wallpaper unicorn.jpg
 	  $ wallpaper
 	  /Users/sindresorhus/unicorn.jpg
-	  $ wallpaper https://assets-cdn.github.com/images/modules/open_graph/github-octocat.png
+	  $ wallpaper https://octodex.github.com/images/dojocat.jpg
 `, {
 	string: ['_']
 });
