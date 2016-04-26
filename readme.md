@@ -18,12 +18,13 @@ $ npm install --global wallpaper-cli
 $ wallpaper --help
 
   Usage
-    $ wallpaper [file]
+    $ wallpaper [file | url]
 
   Example
     $ wallpaper unicorn.jpg
     $ wallpaper
     /Users/sindresorhus/unicorn.jpg
+    $ wallpaper https://octodex.github.com/images/dojocat.jpg
 ```
 
 
