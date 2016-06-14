@@ -2,7 +2,7 @@
 
 > Get or set the desktop wallpaper
 
-Works on OS X, Linux, and Windows.
+Works on macOS, Linux, and Windows.
 
 
 ## Install
