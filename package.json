@@ -28,7 +28,6 @@
     "win",
     "windows",
     "macos",
-    "osx",
     "linux",
     "image",
     "picture",
@@ -40,14 +39,11 @@
     "is-url-superb": "^2.0.0",
     "meow": "^3.4.2",
     "tempfile": "^1.1.1",
-    "wallpaper": "^2.0.0"
+    "wallpaper": "^2.4.0"
   },
   "devDependencies": {
     "ava": "*",
-    "execa": "^0.4.0",
+    "execa": "^0.6.0",
     "xo": "*"
-  },
-  "xo": {
-    "esnext": true
   }
 }

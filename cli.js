@@ -12,17 +12,17 @@ const cli = meow(`
 	Usage
 	  $ wallpaper [file|url]
 
-	  Options
-	    --scale  Scaling method (fill fit stretch center)
-	             If not specified, it will use your current setting
-	             Only available on macOS
+	Options
+	  --scale  Scaling method (fill fit stretch center)
+	           If not specified, it will use your current setting
+	           Only available on macOS
 
 	Examples
 	  $ wallpaper unicorn.jpg
 	  $ wallpaper https://octodex.github.com/images/dojocat.jpg
 	  $ wallpaper
 	  /Users/sindresorhus/unicorn.jpg
-	  $ wallpaper codercat.jpg --scale fit
+	  $ wallpaper codercat.jpg --scale=fit
 `, {
 	string: ['_']
 });
