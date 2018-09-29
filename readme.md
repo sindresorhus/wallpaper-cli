@@ -21,8 +21,7 @@ $ wallpaper --help
     $ wallpaper [file|url]
 
   Options
-    --scale  Scaling method (fill fit stretch center)
-             If not specified, it will use your current setting
+    --scale  Scaling method: auto fill fit stretch center [Default: auto]
              Only available on macOS
 
   Examples
