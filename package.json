@@ -1,49 +1,49 @@
 {
-  "name": "wallpaper-cli",
-  "version": "1.2.0",
-  "description": "Get or set the desktop wallpaper",
-  "license": "MIT",
-  "repository": "sindresorhus/wallpaper-cli",
-  "author": {
-    "name": "Sindre Sorhus",
-    "email": "sindresorhus@gmail.com",
-    "url": "sindresorhus.com"
-  },
-  "bin": {
-    "wallpaper": "cli.js"
-  },
-  "engines": {
-    "node": ">=4"
-  },
-  "scripts": {
-    "test": "xo && ava"
-  },
-  "files": [
-    "cli.js"
-  ],
-  "keywords": [
-    "desktop",
-    "wallpaper",
-    "background",
-    "win",
-    "windows",
-    "macos",
-    "linux",
-    "image",
-    "picture",
-    "photo",
-    "image"
-  ],
-  "dependencies": {
-    "got": "^6.3.0",
-    "is-url-superb": "^2.0.0",
-    "meow": "^3.4.2",
-    "tempfile": "^1.1.1",
-    "wallpaper": "^2.4.0"
-  },
-  "devDependencies": {
-    "ava": "*",
-    "execa": "^0.6.0",
-    "xo": "*"
-  }
+	"name": "wallpaper-cli",
+	"version": "1.2.0",
+	"description": "Manage the desktop wallpaper",
+	"license": "MIT",
+	"repository": "sindresorhus/wallpaper-cli",
+	"author": {
+		"name": "Sindre Sorhus",
+		"email": "sindresorhus@gmail.com",
+		"url": "sindresorhus.com"
+	},
+	"bin": {
+		"wallpaper": "cli.js"
+	},
+	"engines": {
+		"node": ">=8"
+	},
+	"scripts": {
+		"test": "xo && ava"
+	},
+	"files": [
+		"cli.js"
+	],
+	"keywords": [
+		"desktop",
+		"wallpaper",
+		"background",
+		"win",
+		"windows",
+		"macos",
+		"linux",
+		"image",
+		"picture",
+		"photo",
+		"image"
+	],
+	"dependencies": {
+		"got": "^9.2.2",
+		"is-url-superb": "^2.0.0",
+		"meow": "^5.0.0",
+		"tempfile": "^2.0.0",
+		"wallpaper": "^4.0.0"
+	},
+	"devDependencies": {
+		"ava": "^0.25.0",
+		"execa": "^1.0.0",
+		"xo": "^0.23.0"
+	}
 }

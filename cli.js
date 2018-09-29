@@ -13,8 +13,7 @@ const cli = meow(`
 	  $ wallpaper [file|url]
 
 	Options
-	  --scale  Scaling method (fill fit stretch center)
-	           If not specified, it will use your current setting
+	  --scale  Scaling method: auto fill fit stretch center [Default: auto]
 	           Only available on macOS
 
 	Examples
@@ -23,26 +22,25 @@ const cli = meow(`
 	  $ wallpaper
 	  /Users/sindresorhus/unicorn.jpg
 	  $ wallpaper codercat.jpg --scale=fit
-`, {
-	string: ['_']
-});
+`);
 
 const input = cli.input[0];
-const scale = cli.flags.scale;
 
-if (input) {
-	if (isUrl(input)) {
-		const file = tempfile(path.extname(input));
+(async () => {
+	if (input) {
+		if (isUrl(input)) {
+			const file = tempfile(path.extname(input));
 
-		got
-			.stream(input)
-			.pipe(fs.createWriteStream(file))
-			.on('finish', () => {
-				wallpaper.set(file, {scale});
-			});
+			got
+				.stream(input)
+				.pipe(fs.createWriteStream(file))
+				.on('finish', async () => {
+					await wallpaper.set(file, cli.flags);
+				});
+		} else {
+			await wallpaper.set(input, cli.flags);
+		}
 	} else {
-		wallpaper.set(input, {scale});
+		console.log(await wallpaper.get());
 	}
-} else {
-	wallpaper.get().then(console.log);
-}
+})();

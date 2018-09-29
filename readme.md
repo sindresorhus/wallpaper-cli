@@ -1,6 +1,6 @@
 # wallpaper-cli [![Build Status](https://travis-ci.org/sindresorhus/wallpaper-cli.svg?branch=master)](https://travis-ci.org/sindresorhus/wallpaper-cli)
 
-> Get or set the desktop wallpaper
+> Manage the desktop wallpaper
 
 Works on macOS, Linux, and Windows.
 
