@@ -1,4 +1,4 @@
-# wallpaper-cli [![Build Status](https://travis-ci.org/sindresorhus/wallpaper-cli.svg?branch=master)](https://travis-ci.org/sindresorhus/wallpaper-cli)
+# wallpaper-cli
 
 > Manage the desktop wallpaper
 
