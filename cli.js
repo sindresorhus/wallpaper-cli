@@ -20,7 +20,7 @@ const cli = meow(`
 	Examples
 	  $ wallpaper unicorn.jpg
 	  $ wallpaper https://octodex.github.com/images/dojocat.jpg
-		$ wallpaper '#FAFAFA'
+	  $ wallpaper '#FAFAFA'
 	  $ wallpaper
 	  /Users/sindresorhus/unicorn.jpg
 	  $ wallpaper codercat.jpg --scale=fit
