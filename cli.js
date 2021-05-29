@@ -1,17 +1,16 @@
 #!/usr/bin/env node
-'use strict';
-const fs = require('fs');
-const path = require('path');
-const meow = require('meow');
-const wallpaper = require('wallpaper');
-const isUrl = require('is-url-superb');
-const got = require('got');
-const tempfile = require('tempfile');
-const isRGBHex = require('./util/is-rgb-hex');
+import fs from 'node:fs';
+import path from 'node:path';
+import meow from 'meow';
+import wallpaper from 'wallpaper';
+import isUrl from 'is-url-superb';
+import got from 'got';
+import tempfile from 'tempfile';
+import isRGBHex from './utilities/is-rgb-hex.js';
 
 const cli = meow(`
 	Usage
-	  $ wallpaper [file|url]
+	  $ wallpaper [file|url|color]
 
 	Options
 	  --scale  Scaling method: auto fill fit stretch center [Default: auto]
@@ -20,11 +19,19 @@ const cli = meow(`
 	Examples
 	  $ wallpaper unicorn.jpg
 	  $ wallpaper https://octodex.github.com/images/dojocat.jpg
-	  $ wallpaper '#FAFAFA'
+	  $ wallpaper '#ff69b4'
 	  $ wallpaper
 	  /Users/sindresorhus/unicorn.jpg
 	  $ wallpaper codercat.jpg --scale=fit
-`);
+`, {
+	importMeta: import.meta,
+	flags: {
+		// TODO: Use the `choices` option in `meow` when it supports that.
+		scale: {
+			type: 'string'
+		}
+	}
+});
 
 const input = cli.input[0];
 

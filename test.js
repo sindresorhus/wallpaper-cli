@@ -2,5 +2,6 @@ import test from 'ava';
 import execa from 'execa';
 
 test('main', async t => {
-	t.true((await execa.stdout('./cli.js', {cwd: __dirname})).length > 0);
+	const {stdout} = await execa('./cli.js');
+	t.true(stdout.length > 0);
 });

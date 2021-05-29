@@ -7,26 +7,26 @@
 	"author": {
 		"name": "Sindre Sorhus",
 		"email": "sindresorhus@gmail.com",
-		"url": "sindresorhus.com"
+		"url": "https://sindresorhus.com"
 	},
+	"type": "module",
 	"bin": {
-		"wallpaper": "cli.js"
+		"wallpaper": "./cli.js"
 	},
 	"engines": {
-		"node": ">=8"
+		"node": ">=12"
 	},
 	"scripts": {
 		"test": "xo && ava"
 	},
 	"files": [
 		"cli.js",
-		"util"
+		"utilities"
 	],
 	"keywords": [
 		"desktop",
 		"wallpaper",
 		"background",
-		"win",
 		"windows",
 		"macos",
 		"linux",
@@ -36,15 +36,15 @@
 		"image"
 	],
 	"dependencies": {
-		"got": "^9.2.2",
-		"is-url-superb": "^2.0.0",
-		"meow": "^5.0.0",
-		"tempfile": "^2.0.0",
+		"got": "^11.8.2",
+		"is-url-superb": "^6.0.0",
+		"meow": "^10.0.0",
+		"tempfile": "^3.0.0",
 		"wallpaper": "^5.0.0"
 	},
 	"devDependencies": {
-		"ava": "^0.25.0",
-		"execa": "^1.0.0",
-		"xo": "^0.23.0"
+		"ava": "^3.15.0",
+		"execa": "^5.0.0",
+		"xo": "^0.40.1"
 	}
 }
