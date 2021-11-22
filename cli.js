@@ -2,7 +2,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import meow from 'meow';
-import wallpaper from 'wallpaper';
+import {getWallpaper, setWallpaper, setSolidColorWallpaper} from 'wallpaper';
 import isUrl from 'is-url-superb';
 import got from 'got';
 import tempfile from 'tempfile';
@@ -28,9 +28,9 @@ const cli = meow(`
 	flags: {
 		// TODO: Use the `choices` option in `meow` when it supports that.
 		scale: {
-			type: 'string'
-		}
-	}
+			type: 'string',
+		},
+	},
 });
 
 const input = cli.input[0];
@@ -44,14 +44,14 @@ const input = cli.input[0];
 				.stream(input)
 				.pipe(fs.createWriteStream(file))
 				.on('finish', async () => {
-					await wallpaper.set(file, cli.flags);
+					await setWallpaper(file, cli.flags);
 				});
 		} else if (isRGBHex(input)) {
-			await wallpaper.setSolidColor(input);
+			await setSolidColorWallpaper(input);
 		} else {
-			await wallpaper.set(input, cli.flags);
+			await setWallpaper(input, cli.flags);
 		}
 	} else {
-		console.log(await wallpaper.get());
+		console.log(await getWallpaper());
 	}
 })();

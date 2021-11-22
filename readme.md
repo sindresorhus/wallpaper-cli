@@ -6,8 +6,8 @@ Works on macOS, Linux, and Windows.
 
 ## Install
 
-```
-$ npm install --global wallpaper-cli
+```sh
+npm install --global wallpaper-cli
 ```
 
 ## Usage
