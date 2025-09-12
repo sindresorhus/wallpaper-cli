@@ -33,4 +33,4 @@ $ wallpaper --help
 
 ## Related
 
-- [wallpaper](https://github.com/sindresorhus/wallpaper) - API for this module
+- [wallpaper](https://github.com/sindresorhus/wallpaper) - API for this package

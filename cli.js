@@ -1,10 +1,15 @@
 #!/usr/bin/env node
 import fs from 'node:fs';
 import path from 'node:path';
+import {pipeline} from 'node:stream/promises';
 import meow from 'meow';
-import {getWallpaper, setWallpaper, setSolidColorWallpaper} from 'wallpaper';
+import {
+	getWallpaper,
+	setWallpaper,
+	setSolidColorWallpaper,
+} from 'wallpaper';
 import isUrl from 'is-url-superb';
-import got from 'got';
+import {withHttpError, withTimeout} from 'fetch-extras';
 import tempfile from 'tempfile';
 import isRGBHex from './utilities/is-rgb-hex.js';
 
@@ -35,23 +40,24 @@ const cli = meow(`
 
 const input = cli.input[0];
 
-(async () => {
-	if (input) {
-		if (isUrl(input)) {
-			const file = tempfile(path.extname(input));
+if (input) {
+	if (isUrl(input)) {
+		const file = tempfile({extension: path.extname(input).slice(1)});
 
-			got
-				.stream(input)
-				.pipe(fs.createWriteStream(file))
-				.on('finish', async () => {
-					await setWallpaper(file, cli.flags);
-				});
-		} else if (isRGBHex(input)) {
-			await setSolidColorWallpaper(input);
-		} else {
-			await setWallpaper(input, cli.flags);
-		}
+		const fetchWithExtras = withTimeout(withHttpError(fetch), 30_000);
+		const response = await fetchWithExtras(input);
+
+		await pipeline(
+			response.body,
+			fs.createWriteStream(file),
+		);
+
+		await setWallpaper(file, cli.flags);
+	} else if (isRGBHex(input)) {
+		await setSolidColorWallpaper(input);
 	} else {
-		console.log(await getWallpaper());
+		await setWallpaper(input, cli.flags);
 	}
-})();
+} else {
+	console.log(await getWallpaper());
+}

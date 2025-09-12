@@ -4,6 +4,7 @@
 	"description": "Manage the desktop wallpaper",
 	"license": "MIT",
 	"repository": "sindresorhus/wallpaper-cli",
+	"funding": "https://github.com/sponsors/sindresorhus",
 	"author": {
 		"name": "Sindre Sorhus",
 		"email": "sindresorhus@gmail.com",
@@ -13,8 +14,9 @@
 	"bin": {
 		"wallpaper": "./cli.js"
 	},
+	"sideEffects": false,
 	"engines": {
-		"node": ">=12"
+		"node": ">=20"
 	},
 	"scripts": {
 		"test": "xo && ava"
@@ -36,15 +38,15 @@
 		"image"
 	],
 	"dependencies": {
-		"got": "^11.8.3",
+		"fetch-extras": "^1.0.0",
 		"is-url-superb": "^6.1.0",
-		"meow": "^10.1.2",
-		"tempfile": "^4.0.0",
-		"wallpaper": "^6.0.0"
+		"meow": "^13.2.0",
+		"tempfile": "^5.0.0",
+		"wallpaper": "^7.2.1"
 	},
 	"devDependencies": {
-		"ava": "^3.15.0",
-		"execa": "^6.0.0",
-		"xo": "^0.46.4"
+		"ava": "^6.4.1",
+		"execa": "^9.6.0",
+		"xo": "^1.2.2"
 	}
 }
